@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="ja">
-<html lang="ja"><head>
+<html lang="en">
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Water Sort Puzzle Solver</title>
@@ -183,41 +183,41 @@
 
   <div class="container">
     <div class="panel">
-      <h3>1. カラーパレット &amp; チューブ設定</h3>
+      <h3>1. Color Palette &amp; Tube Setup</h3>
       <div style="text-align: center; font-size: 0.8rem; color: #94a3b8; margin-bottom: 8px;">
-        💡 パレットの丸を**ダブルクリック**すると、好きな色に変更できます
+        💡 Double-click a palette circle to change it to any color you like.
       </div>
       
       <div class="palette-container">
-        <div class="palette" id="palette"><div class="color-btn" style="background-color: rgb(236, 101, 128);">A</div><div class="color-btn" style="background-color: rgb(131, 171, 236);">B</div><div class="color-btn" style="background-color: rgb(10, 102, 44);">C</div><div class="color-btn" style="background-color: rgb(105, 7, 69);">D</div><div class="color-btn" style="background-color: rgb(0, 22, 133);">E</div><div class="color-btn" style="background-color: rgb(78, 198, 86);">F</div><div class="color-btn" style="background-color: rgb(153, 21, 91);">G</div><div class="color-btn" style="background-color: rgb(249, 115, 22);">H</div><div class="color-btn" style="background-color: rgb(255, 0, 0);">I</div><div class="color-btn" style="background-color: rgb(153, 54, 0);">J</div><div class="color-btn selected" style="background-color: rgb(131, 21, 153);">K</div><div class="color-btn" style="background-color: rgb(71, 85, 105); border-style: dashed;">?</div><div class="color-btn" title="消去" style="background-color: transparent; border-style: dashed; color: rgb(148, 163, 184);">✕</div></div>
+        <div class="palette" id="palette"><div class="color-btn" style="background-color: rgb(236, 101, 128);">A</div><div class="color-btn" style="background-color: rgb(131, 171, 236);">B</div><div class="color-btn" style="background-color: rgb(10, 102, 44);">C</div><div class="color-btn" style="background-color: rgb(105, 7, 69);">D</div><div class="color-btn" style="background-color: rgb(0, 22, 133);">E</div><div class="color-btn" style="background-color: rgb(78, 198, 86);">F</div><div class="color-btn" style="background-color: rgb(153, 21, 91);">G</div><div class="color-btn" style="background-color: rgb(249, 115, 22);">H</div><div class="color-btn" style="background-color: rgb(255, 0, 0);">I</div><div class="color-btn" style="background-color: rgb(153, 54, 0);">J</div><div class="color-btn" style="background-color: rgb(131, 21, 153);">K</div><div class="color-btn selected" style="background-color: rgb(71, 85, 105); border-style: dashed;">?</div></div>
         <div style="display: flex; gap: 8px;">
-          <button class="btn btn-success" style="padding: 4px 10px; font-size: 0.8rem;" onclick="addNewColor()">+ 新しい色を追加</button>
+          <button class="btn btn-success" style="padding: 4px 10px; font-size: 0.8rem;" onclick="addNewColor()">+ Add New Color</button>
         </div>
         
         <div class="stats-box">
-          <div style="font-weight: bold; text-align: center; color: #cbd5e1;">各色の使用数 (目標: 各4個 / 「?」は自動補完)</div>
-          <div class="stats-grid" id="statsGrid"><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(236, 101, 128);"></div><span style="color: rgb(52, 211, 153);">A: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(131, 171, 236);"></div><span>B: 3/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(10, 102, 44);"></div><span style="color: rgb(52, 211, 153);">C: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(105, 7, 69);"></div><span style="color: rgb(52, 211, 153);">D: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(0, 22, 133);"></div><span>E: 3/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(78, 198, 86);"></div><span style="color: rgb(52, 211, 153);">F: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(153, 21, 91);"></div><span style="color: rgb(52, 211, 153);">G: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(249, 115, 22);"></div><span>H: 2/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(255, 0, 0);"></div><span style="color: rgb(52, 211, 153);">I: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(153, 54, 0);"></div><span style="color: rgb(52, 211, 153);">J: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(131, 21, 153);"></div><span style="color: rgb(52, 211, 153);">K: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(71, 85, 105);"></div><span>?: 4個</span></div></div>
+          <div style="font-weight: bold; text-align: center; color: #cbd5e1;">Color usage count (Goal: 4 each / '?' auto-fills)</div>
+          <div class="stats-grid" id="statsGrid"><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(236, 101, 128);"></div><span style="color: rgb(52, 211, 153);">A: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(131, 171, 236);"></div><span style="color: rgb(52, 211, 153);">B: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(10, 102, 44);"></div><span style="color: rgb(52, 211, 153);">C: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(105, 7, 69);"></div><span style="color: rgb(52, 211, 153);">D: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(0, 22, 133);"></div><span style="color: rgb(52, 211, 153);">E: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(78, 198, 86);"></div><span style="color: rgb(52, 211, 153);">F: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(153, 21, 91);"></div><span style="color: rgb(52, 211, 153);">G: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(249, 115, 22);"></div><span style="color: rgb(52, 211, 153);">H: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(255, 0, 0);"></div><span style="color: rgb(52, 211, 153);">I: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(153, 54, 0);"></div><span style="color: rgb(52, 211, 153);">J: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(131, 21, 153);"></div><span style="color: rgb(52, 211, 153);">K: 4/4</span></div><div class="stat-item"><div class="stat-color-dot" style="background-color: rgb(71, 85, 105);"></div><span style="color: rgb(148, 163, 184);">?: 0</span></div></div>
         </div>
       </div>
       
-      <div class="tubes-grid" id="tubesContainer"><div class="tube-wrapper"><div>#1</div><div class="tube"><div class="segment" style="background-color: rgb(105, 7, 69); cursor: pointer;"></div><div class="segment" style="background-color: rgb(10, 102, 44); cursor: pointer;"></div><div class="segment" style="background-color: rgb(131, 171, 236); cursor: pointer;"></div><div class="segment" style="background-color: rgb(236, 101, 128); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#2</div><div class="tube"><div class="segment" style="background-color: rgb(71, 85, 105); cursor: pointer;">?</div><div class="segment" style="background-color: rgb(71, 85, 105); cursor: pointer;">?</div><div class="segment" style="background-color: rgb(78, 198, 86); cursor: pointer;"></div><div class="segment" style="background-color: rgb(0, 22, 133); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#3</div><div class="tube"><div class="segment" style="background-color: rgb(71, 85, 105); cursor: pointer;">?</div><div class="segment" style="background-color: rgb(105, 7, 69); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 21, 91); cursor: pointer;"></div><div class="segment" style="background-color: rgb(78, 198, 86); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#4</div><div class="tube"><div class="segment" style="background-color: rgb(71, 85, 105); cursor: pointer;">?</div><div class="segment" style="background-color: rgb(10, 102, 44); cursor: pointer;"></div><div class="segment" style="background-color: rgb(131, 21, 153); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 54, 0); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#5</div><div class="tube"><div class="segment" style="background-color: rgb(131, 21, 153); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 54, 0); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 21, 91); cursor: pointer;"></div><div class="segment" style="background-color: rgb(131, 171, 236); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#6</div><div class="tube"><div class="segment" style="background-color: rgb(236, 101, 128); cursor: pointer;"></div><div class="segment" style="background-color: rgb(255, 0, 0); cursor: pointer;"></div><div class="segment" style="background-color: rgb(249, 115, 22); cursor: pointer;"></div><div class="segment" style="background-color: rgb(255, 0, 0); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#7</div><div class="tube"><div class="segment" style="background-color: rgb(105, 7, 69); cursor: pointer;"></div><div class="segment" style="background-color: rgb(0, 22, 133); cursor: pointer;"></div><div class="segment" style="background-color: rgb(10, 102, 44); cursor: pointer;"></div><div class="segment" style="background-color: rgb(131, 171, 236); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#8</div><div class="tube"><div class="segment" style="background-color: rgb(78, 198, 86); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 21, 91); cursor: pointer;"></div><div class="segment" style="background-color: rgb(131, 21, 153); cursor: pointer;"></div><div class="segment" style="background-color: rgb(236, 101, 128); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#9</div><div class="tube"><div class="segment" style="background-color: rgb(105, 7, 69); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 54, 0); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 21, 91); cursor: pointer;"></div><div class="segment" style="background-color: rgb(0, 22, 133); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#10</div><div class="tube"><div class="segment" style="background-color: rgb(78, 198, 86); cursor: pointer;"></div><div class="segment" style="background-color: rgb(10, 102, 44); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 54, 0); cursor: pointer;"></div><div class="segment" style="background-color: rgb(131, 21, 153); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#11</div><div class="tube"><div class="segment" style="background-color: rgb(255, 0, 0); cursor: pointer;"></div><div class="segment" style="background-color: rgb(249, 115, 22); cursor: pointer;"></div><div class="segment" style="background-color: rgb(236, 101, 128); cursor: pointer;"></div><div class="segment" style="background-color: rgb(255, 0, 0); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#12</div><div class="tube"><div class="segment" style="background-color: transparent; cursor: pointer;"></div><div class="segment" style="background-color: transparent; cursor: pointer;"></div><div class="segment" style="background-color: transparent; cursor: pointer;"></div><div class="segment" style="background-color: transparent; cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#13</div><div class="tube"><div class="segment" style="background-color: transparent; cursor: pointer;"></div><div class="segment" style="background-color: transparent; cursor: pointer;"></div><div class="segment" style="background-color: transparent; cursor: pointer;"></div><div class="segment" style="background-color: transparent; cursor: pointer;"></div></div></div></div>
+      <div class="tubes-grid" id="tubesContainer"><div class="tube-wrapper"><div>#1</div><div class="tube"><div class="segment" style="background-color: rgb(105, 7, 69); cursor: pointer;"></div><div class="segment" style="background-color: rgb(10, 102, 44); cursor: pointer;"></div><div class="segment" style="background-color: rgb(131, 171, 236); cursor: pointer;"></div><div class="segment" style="background-color: rgb(236, 101, 128); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#2</div><div class="tube"><div class="segment" style="background-color: rgb(71, 85, 105); cursor: pointer;"></div><div class="segment" style="background-color: rgb(71, 85, 105); cursor: pointer;"></div><div class="segment" style="background-color: rgb(78, 198, 86); cursor: pointer;"></div><div class="segment" style="background-color: rgb(0, 22, 133); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#3</div><div class="tube"><div class="segment" style="background-color: rgb(71, 85, 105); cursor: pointer;"></div><div class="segment" style="background-color: rgb(105, 7, 69); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 21, 91); cursor: pointer;"></div><div class="segment" style="background-color: rgb(78, 198, 86); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#4</div><div class="tube"><div class="segment" style="background-color: rgb(71, 85, 105); cursor: pointer;"></div><div class="segment" style="background-color: rgb(10, 102, 44); cursor: pointer;"></div><div class="segment" style="background-color: rgb(131, 21, 153); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 54, 0); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#5</div><div class="tube"><div class="segment" style="background-color: rgb(131, 21, 153); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 54, 0); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 21, 91); cursor: pointer;"></div><div class="segment" style="background-color: rgb(131, 171, 236); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#6</div><div class="tube"><div class="segment" style="background-color: rgb(236, 101, 128); cursor: pointer;"></div><div class="segment" style="background-color: rgb(255, 0, 0); cursor: pointer;"></div><div class="segment" style="background-color: rgb(249, 115, 22); cursor: pointer;"></div><div class="segment" style="background-color: rgb(255, 0, 0); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#7</div><div class="tube"><div class="segment" style="background-color: rgb(105, 7, 69); cursor: pointer;"></div><div class="segment" style="background-color: rgb(0, 22, 133); cursor: pointer;"></div><div class="segment" style="background-color: rgb(10, 102, 44); cursor: pointer;"></div><div class="segment" style="background-color: rgb(131, 171, 236); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#8</div><div class="tube"><div class="segment" style="background-color: rgb(78, 198, 86); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 21, 91); cursor: pointer;"></div><div class="segment" style="background-color: rgb(131, 21, 153); cursor: pointer;"></div><div class="segment" style="background-color: rgb(236, 101, 128); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#9</div><div class="tube"><div class="segment" style="background-color: rgb(105, 7, 69); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 54, 0); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 21, 91); cursor: pointer;"></div><div class="segment" style="background-color: rgb(0, 22, 133); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#10</div><div class="tube"><div class="segment" style="background-color: rgb(78, 198, 86); cursor: pointer;"></div><div class="segment" style="background-color: rgb(10, 102, 44); cursor: pointer;"></div><div class="segment" style="background-color: rgb(153, 54, 0); cursor: pointer;"></div><div class="segment" style="background-color: rgb(131, 21, 153); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#11</div><div class="tube"><div class="segment" style="background-color: rgb(255, 0, 0); cursor: pointer;"></div><div class="segment" style="background-color: rgb(249, 115, 22); cursor: pointer;"></div><div class="segment" style="background-color: rgb(236, 101, 128); cursor: pointer;"></div><div class="segment" style="background-color: rgb(255, 0, 0); cursor: pointer;"></div></div></div><div class="tube-wrapper"><div>#12</div><div class="tube"><div class="segment" style="background-color: transparent;"></div><div class="segment" style="background-color: transparent;"></div><div class="segment" style="background-color: transparent;"></div><div class="segment" style="background-color: transparent;"></div></div></div><div class="tube-wrapper"><div>#13</div><div class="tube"><div class="segment" style="background-color: transparent;"></div><div class="segment" style="background-color: transparent;"></div><div class="segment" style="background-color: transparent;"></div><div class="segment" style="background-color: transparent;"></div></div></div></div>
 
       <div class="controls" id="editControls" style="opacity: 1; pointer-events: auto;">
-        <button class="btn btn-secondary" onclick="addTube()">チューブ追加</button>
-        <button class="btn btn-secondary" onclick="removeTube()">チューブ削除</button>
-        <button class="btn btn-secondary" onclick="resetTubes()">クリア</button>
-        <button class="btn btn-purple" onclick="downloadCurrentHTML()">💾 現在の設定をHTML保存</button>
-        <button class="btn" onclick="solve()">解析・パズルを解く</button>
+        <button class="btn btn-secondary" onclick="addTube()">Add Tube</button>
+        <button class="btn btn-secondary" onclick="removeTube()">Remove Tube</button>
+        <button class="btn btn-secondary" onclick="resetTubes()">Clear</button>
+        <button class="btn btn-purple" onclick="downloadCurrentHTML()">💾 Save Current State as HTML</button>
+        <button class="btn" onclick="solve()">Analyze / Solve Puzzle</button>
       </div>
     </div>
 
     <div class="panel">
-      <h3>2. 解答ステップ (<span id="stepIndicator">初期状態 (設定・編集可能)</span>)</h3>
+      <h3>2. Solution Steps (<span id="stepIndicator">Initial State (editable)</span>)</h3>
       <div class="controls" style="margin-bottom: 12px;">
-        <button class="btn btn-secondary" id="prevBtn" onclick="prevStep()" disabled="">◀ 0 (初期状態)</button>
-        <button class="btn btn-secondary" id="nextBtn" onclick="nextStep()" disabled="">次へ ▶</button>
+        <button class="btn btn-secondary" id="prevBtn" onclick="prevStep()" disabled="">◀ 0 (Initial State)</button>
+        <button class="btn btn-secondary" id="nextBtn" onclick="nextStep()" disabled="">Next ▶</button>
       </div>
-      <div class="steps-container" id="stepsLog">リセットしました。</div>
+      <div class="steps-container" id="stepsLog">Reset.</div>
     </div>
   </div>
 
@@ -356,7 +356,7 @@
       eraser.style.backgroundColor = 'transparent';
       eraser.style.borderStyle = 'dashed';
       eraser.style.color = '#94a3b8';
-      eraser.title = '消去';
+      eraser.title = 'Clear';
       eraser.innerText = '✕';
       eraser.onclick = () => {
         if (currentStepIdx !== -1) return;
@@ -396,7 +396,7 @@
         initPalette();
         updateStats();
       } else {
-        alert('これ以上色を追加できません。');
+        alert('No more colors can be added.');
       }
     }
 
@@ -421,7 +421,7 @@
 
         const text = document.createElement('span');
         if (char === '?') {
-          text.innerText = `?: ${count}個`;
+          text.innerText = `?: ${count}`;
         } else {
           text.innerText = `${char.toUpperCase()}: ${count}/4`;
           if (count === 4) text.style.color = '#34d399';
@@ -484,17 +484,19 @@
       const editControls = document.getElementById('editControls');
 
       if (currentStepIdx === -1) {
-        indicator.innerText = '初期状態 (設定・編集可能)';
+        indicator.innerText = 'Initial State (editable)';
         prevBtn.disabled = true;
-        prevBtn.innerText = '◀ 0 (初期状態)';
+        prevBtn.innerText = '◀ 0 (Initial State)';
         nextBtn.disabled = solutionPath.length === 0;
+        nextBtn.innerText = 'Next ▶';
         editControls.style.opacity = '1';
         editControls.style.pointerEvents = 'auto';
       } else {
-        indicator.innerText = `手順 ${currentStepIdx + 1} / ${solutionPath.length} 手目`;
+        indicator.innerText = `Step ${currentStepIdx + 1} / ${solutionPath.length}`;
         prevBtn.disabled = false;
-        prevBtn.innerText = currentStepIdx === 0 ? '◀ 0 (初期状態に戻る)' : '◀ 前へ';
+        prevBtn.innerText = currentStepIdx === 0 ? '◀ 0 (Back to Initial State)' : '◀ Previous';
         nextBtn.disabled = currentStepIdx >= solutionPath.length - 1;
+        nextBtn.innerText = 'Next ▶';
         editControls.style.opacity = '0.4';
         editControls.style.pointerEvents = 'none';
       }
@@ -552,20 +554,20 @@
       initialTubes = currentTubes.map(arr => [...arr]);
       solutionPath = [];
       currentStepIdx = -1;
-      document.getElementById('stepsLog').innerHTML = 'リセットしました。';
+      document.getElementById('stepsLog').innerHTML = 'Reset.';
       renderTubes();
     }
 
-    // ★ 現在の設定を埋め込んで新しいHTMLファイルとしてダウンロードする関数
+    // ★ Save the current settings into a new HTML file
     function downloadCurrentHTML() {
-      // 現在のドキュメントのソースコードを取得
+      // Get the source code of the current document
       let docContent = document.documentElement.outerHTML;
 
-      // colorMap と initialTubes の定義部分を現在の値に置換
+      // Replace the colorMap and initialTubes definitions with their current values
       const colorMapJson = JSON.stringify(colorMap, null, 6);
       const initialTubesJson = JSON.stringify(initialTubes, null, 6);
 
-      // script内の初期変数を現在の状態に書き換える
+      // Rewrite the initial variables in the script
       docContent = docContent.replace(
         /let colorMap = \{[\s\S]*?\};/,
         `let colorMap = ${colorMapJson};`
@@ -575,8 +577,8 @@
         `let initialTubes = ${initialTubesJson};`
       );
 
-      // Blobを作成してダウンロード実行
-      const blob = new Blob(['<!DOCTYPE html>\n<html lang="ja">\n' + docContent + '\n</html>'], { type: 'text/html;charset=utf-8' });
+      // Create Blob and trigger download
+      const blob = new Blob(['<!DOCTYPE html>\n<html lang="en">\n' + docContent + '\n</html>'], { type: 'text/html;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
@@ -714,7 +716,7 @@
 
     function solve() {
       const logEl = document.getElementById('stepsLog');
-      logEl.innerHTML = '解析中...';
+      logEl.innerHTML = 'Analyzing...';
 
       setTimeout(() => {
         const path = solveWaterSort(initialTubes);
@@ -724,12 +726,12 @@
           currentTubes = initialTubes.map(arr => [...arr]);
 
           logEl.innerHTML = solutionPath.map((s, idx) => 
-            `<div class="step-item" onclick="goToStep(${idx})">手順 ${idx + 1} / ${solutionPath.length}: チューブ ${s.move[0] + 1} ➔ チューブ ${s.move[1] + 1} (${s.move[2]}層)</div>`
+            `<div class="step-item" onclick="goToStep(${idx})">Step ${idx + 1} / ${solutionPath.length}: Tube ${s.move[0] + 1} ➔ Tube ${s.move[1] + 1} (${s.move[2]} layers)</div>`
           ).join('');
           
           renderTubes();
         } else {
-          logEl.innerHTML = '解が見つかりませんでした。入力状態や色の数を確認してください。';
+          logEl.innerHTML = 'No solution found. Please check the input state and number of colors.';
         }
       }, 50);
     }
